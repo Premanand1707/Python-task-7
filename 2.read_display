@@ -1,0 +1,26 @@
+# Function to create a text file with a given name and content
+def create_file(filename, content):
+        with open(filename, 'w') as file:
+        file.write(content)
+    print(f"File '{filename}' created.")
+
+# Function to read the content of a text file and display it
+def read_file(filename):
+    try:
+        # Open the file in read mode
+        with open(filename, 'r') as file:
+            # Read the file content
+            content = file.read()
+        print(f"Content of '{filename}':\n{content}")
+    except FileNotFoundError:
+        print(f"The file '{filename}' does not exist.")
+
+# Given filename and content
+filename = "Python_Programming.txt"
+content = "I am a Python Developer"
+
+# Create the file with the given content
+create_file(filename, content)
+
+# Read and display the content of the created file
+read_file(filename)
